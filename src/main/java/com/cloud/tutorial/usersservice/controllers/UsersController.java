@@ -20,13 +20,13 @@ import com.cloud.tutorial.usersservice.repositories.UsersRepository;
 public class UsersController {
 
 	private static final Logger logger = LoggerFactory.getLogger(UsersController.class);
-
+	
 	@Autowired
 	private UsersRepository usersRepository;
-
+	
 	@GetMapping("/users")
 	public List<User> getUsers() {
-
+		
 		logger.debug("Request for all users");
 		
 		final List<User> usersList = (List)usersRepository.findAll();
